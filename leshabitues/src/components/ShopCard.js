@@ -5,6 +5,9 @@ import {
 } from 'reactstrap';
 
 const ShopCard = ({ shops }) => {
+    let str = shops.maxoffer
+    let maxoff = parseFloat(str.replace(',', '.').replace(' ', ''))
+
     return (
         <div>
             <Card className="card-style">
@@ -14,7 +17,7 @@ const ShopCard = ({ shops }) => {
                 <CardBody>
                     <CardTitle >{shops.name}</CardTitle>
                     <CardSubtitle>{shops.address}</CardSubtitle>
-                    <CardText>Up to {shops.maxoffer} € offered</CardText>
+                    <CardText>Up to {maxoff} € offered</CardText>
                 </CardBody>
             </Card>
         </div>
