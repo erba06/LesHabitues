@@ -31,3 +31,89 @@
     transform: rotate(360deg);
   }
 }
+
+/** loader from https://codepen.io/yastrebov/pen/xNvZWJ?&page=1**/
+:root {
+  --green-color: #2DA94F;
+  --yellow-color: #FDBD00;
+  --red-color: #ED412C;
+  --blue-color: #3E82F7;
+}
+
+@keyframes moveLeftTop {
+  25%, 75% {
+    transform: translate(-62.5%, -62.5%) scale(0.6);
+  }
+  50% {
+    transform: translate(-125%, -125%);
+  }
+}
+
+@keyframes moveRightTop {
+  25%, 75% {
+    transform: translate(62.5%, -62.5%) scale(0.6);
+  }
+  50% {
+    transform: translate(125%, -125%);
+  }
+}
+
+@keyframes moveLeftBottom {
+  25%, 75% {
+    transform: translate(-62.5%, 62.5%) scale(0.6);
+  }
+  50% {
+    transform: translate(-125%, 125%);
+  }
+}
+
+@keyframes moveRightBottom {
+  25%, 75% {
+    transform: translate(62.5%, 62.5%) scale(0.6);
+  }
+  50% {
+    transform: translate(125%, 125%);
+  }
+}
+
+.dots {
+  position: absolute;
+  top: 40vh;
+  left: 50vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 80px;
+}
+
+.scaler {
+  animation: scale 2s infinite ease-out;
+}
+
+.dot {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dot--green {
+  background-color: var(--green-color);
+  animation: moveRightBottom 2.5s infinite ease-out;
+}
+
+.dot--yellow {
+  background-color: var(--yellow-color);
+  animation: moveLeftBottom 2.5s infinite ease-out;
+}
+
+.dot--red {
+  background-color: var(--red-color);
+  animation: moveRightTop 2.5s infinite ease-out;
+}
+
+.dot--blue {
+  background-color: var(--blue-color);
+  animation: moveLeftTop 2.5s infinite ease-out;
+}

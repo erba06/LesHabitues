@@ -52,8 +52,11 @@ export default class DisplayComponent extends React.Component {
         if (this.state.loading) {
             return (
                 /** Loader **/
-                <div class='loader'>
-                    Loading...
+                <div class='dots'>
+                    <div class='dot dot--green'></div>
+                    <div class='dot dot--yellow'></div>
+                    <div class='dot dot--red'></div>
+                    <div class='dot dot--blue'></div>
                 </div>);
         } else {
             return (
