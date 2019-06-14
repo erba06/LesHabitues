@@ -1,5 +1,6 @@
 import React from 'react'
 import ShopCard from './ShopCard'
+import Button from '@material-ui/core/Button';
 import axios from 'axios';
 let url = `https://www.leshabitues.fr/testapi/shops`
 
@@ -11,6 +12,7 @@ export default class DisplayComponent extends React.Component {
             shops: [],
             loading: true
         }
+        this.click = this.click.bind(this);
     }
     getPosts = () => {
         axios.get(url)
@@ -44,6 +46,10 @@ export default class DisplayComponent extends React.Component {
     }
 
     componentDidMount() {
+        this.getPosts()
+    }
+
+    click() {
         this.getPosts()
     }
 
